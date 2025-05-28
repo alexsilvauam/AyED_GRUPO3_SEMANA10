@@ -1,0 +1,18 @@
+# Diccionario para almacenar el historial de trámites por ciudadano
+historial_tramites = {}
+
+# Función para registrar un trámite en el historial de un ciudadano
+def registrar_tramite(ciudadano, tramite):
+    if ciudadano not in historial_tramites:
+        historial_tramites[ciudadano] = []  # Se crea una pila (lista) si no existe
+    historial_tramites[ciudadano].append(tramite)
+    print(f"Trámite '{tramite}' registrado para {ciudadano}.")
+
+# Función para ver el historial de un ciudadano (últimos trámites primero)
+def ver_historial(ciudadano):
+    if ciudadano in historial_tramites and historial_tramites[ciudadano]:
+        print(f"Historial de trámites para {ciudadano}:")
+        for tramite in reversed(historial_tramites[ciudadano]):
+            print(f" - {tramite}")
+    else:
+        print(f"No hay historial de trámites para {ciudadano}.")
