@@ -1,6 +1,8 @@
 cola_tramites = []
 historial = {}
 
+#la contraseña del funcionario es "admin123"
+
 def mostrar_menu():
     print("\n Menú Principal ")
     print("1. Llegada de ciudadano")
